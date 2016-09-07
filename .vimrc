@@ -44,7 +44,7 @@ colorscheme solarized
 let g:ctrlp_max_files=0
 
 "YouCompleteMe Settings
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 "Use system clipboard
 :set clipboard=unnamed
