@@ -33,12 +33,38 @@ filetype plugin indent on    " required
 "filetype plugin on
 "
 
+"Solarized & Styling Settings
 set number
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+
+"Ctrlp settings
 let g:ctrlp_max_files=0
+
+"YouCompleteMe Settings
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf'
+
+"Use system clipboard
+:set clipboard=unnamed
+:set clipboard=unnamedplus
+
+"Vim Defaults
+set autoindent        " always set autoindenting on
+set showmatch        " Show matching brackets.
+set ignorecase    " Do case insensitive matching
+
+" indentation
+filetype indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+
+
+
+
 " Brief help
 "
 " :PluginList       - lists configured plugins
