@@ -19,7 +19,7 @@ Plugin 'L9'
 " You complete me plugin
 Plugin 'valloric/youcompleteme'
 "Fuzzy find
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 "Solarize color plugin
 Plugin 'altercation/vim-colors-solarized'
 
@@ -38,6 +38,7 @@ syntax enable
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+let g:ctrlp_max_files=0
 " Brief help
 "
 " :PluginList       - lists configured plugins
