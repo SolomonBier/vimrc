@@ -45,6 +45,17 @@ let g:ctrlp_max_files=0
 
 "YouCompleteMe Settings
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_always_populate_location_list = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_semantic_triggers = {
+             \ 'c' : ['->', '.'],
+             \ 'cpp' : ['->', '.'],
+             \ }
+let g:ctrlp_clear_cache_on_exit=0
+
+
 
 "Use system clipboard
 :set clipboard=unnamed
