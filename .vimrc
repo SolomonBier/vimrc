@@ -49,7 +49,19 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 
 "YouCompleteMe Settings
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"Don't forget to install silver searcher
+"Silver Searcher
+if executable('ag')
+      " Use ag over grep
+         set grepprg=ag\ --nogroup\ --nocolor
+      
+           " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+             let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+       " ag is fast enough that CtrlP doesn't need to cache
+        "let g:ctrlp_use_caching = 0
+endif" The Silver Searcher
+
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_always_populate_location_list = 1
