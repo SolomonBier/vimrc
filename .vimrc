@@ -40,8 +40,13 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
-"Ctrlp settings
+"CtrlP Settings
 let g:ctrlp_max_files=0
+let g:ctrlp_clear_cache_on_exit=0
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" RUN THIS sudo apt-get install vim-gtk
+
 
 "YouCompleteMe Settings
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -53,7 +58,6 @@ let g:ycm_semantic_triggers = {
              \ 'c' : ['->', '.'],
              \ 'cpp' : ['->', '.'],
              \ }
-let g:ctrlp_clear_cache_on_exit=0
 
 
 
