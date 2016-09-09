@@ -38,17 +38,18 @@ set number
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
+set t_Co=16
 colorscheme solarized
 
 "CtrlP Settings
 let g:ctrlp_max_files=0
 let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-" RUN THIS sudo apt-get install vim-gtk
-
-
-"YouCompleteMe Settings
 "Don't forget to install silver searcher
 "Silver Searcher
 if executable('ag')
@@ -58,10 +59,11 @@ if executable('ag')
            " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
              let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-       " ag is fast enough that CtrlP doesn't need to cache
-        "let g:ctrlp_use_caching = 0
+       " ag is fast enough that CtrlP doesn't need to cache (act no i am not seeing it is)
+       "let g:ctrlp_use_caching = 0
 endif" The Silver Searcher
 
+"YouCompleteMe Settings
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_always_populate_location_list = 1
@@ -74,8 +76,9 @@ let g:ycm_semantic_triggers = {
 
 
 "Use system clipboard
-:set clipboard=unnamed
-:set clipboard=unnamedplus
+" RUN THIS sudo apt-get install vim-gtk
+set clipboard=unnamed
+set clipboard=unnamedplus
 
 "Vim Defaults
 set autoindent        " always set autoindenting on
@@ -101,4 +104,3 @@ set expandtab
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
