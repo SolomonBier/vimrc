@@ -44,7 +44,7 @@ colorscheme solarized
 "CtrlP Settings
 let g:ctrlp_max_files=0
 let g:ctrlp_clear_cache_on_exit=0
-let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
+let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s','ag %s -l --nocolor -g ""']
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=
@@ -57,8 +57,6 @@ if executable('ag')
          set grepprg=ag\ --nogroup\ --nocolor
       
            " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-             let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
        " ag is fast enough that CtrlP doesn't need to cache (act no i am not seeing it is)
        "let g:ctrlp_use_caching = 0
 endif" The Silver Searcher
