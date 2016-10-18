@@ -22,7 +22,8 @@ Plugin 'valloric/youcompleteme'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Solarize color plugin
 Plugin 'altercation/vim-colors-solarized'
-
+"Edit surronding text i.e. ()
+Plugin 'tpope/vim-surround'
 
 
 
