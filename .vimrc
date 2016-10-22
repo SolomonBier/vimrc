@@ -51,6 +51,7 @@ let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 "Don't forget to install silver searcher
 "Silver Searcher
 if executable('ag')
