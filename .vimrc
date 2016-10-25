@@ -24,8 +24,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'altercation/vim-colors-solarized'
 "Edit surronding text i.e. ()
 Plugin 'tpope/vim-surround'
-
-
+" colorschmes
+Plugin 'alnjxn/base16-oceanicnext'
+" Bubble text + other goodies
+Plugin 'tpope/vim-unimpaired'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,6 +43,7 @@ set background=dark
 let g:solarized_termcolors=256
 set t_Co=16
 colorscheme solarized
+"colorscheme base16-oceanicnext
 
 "CtrlP Settings
 let g:ctrlp_max_files=0
