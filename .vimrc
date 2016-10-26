@@ -28,6 +28,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'alnjxn/base16-oceanicnext'
 " Bubble text + other goodies
 Plugin 'tpope/vim-unimpaired'
+" Plugin for visual search
+Plugin 'nelstrom/vim-visual-star-search'
+" Plugin for auto pep8 + format based on config in repo
+Plugin 'editorconfig/editorconfig-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
