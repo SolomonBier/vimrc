@@ -1,15 +1,12 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -32,14 +29,15 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'nelstrom/vim-visual-star-search'
 " Plugin for auto pep8 + format based on config in repo
 Plugin 'editorconfig/editorconfig-vim'
-
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'powerline/fonts'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
-
 "Solarized & Styling Settings
 set number
 syntax enable
@@ -48,7 +46,14 @@ let g:solarized_termcolors=256
 set t_Co=16
 colorscheme solarized
 "colorscheme base16-oceanicnext
-
+" Vim airline settings
+" Dont forget to add powerline fonts https://github.com/powerline/fonts
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_theme='jellybeans'
+let g:airline_powerline_fonts = 1
 "CtrlP Settings
 let g:ctrlp_max_files=0
 let g:ctrlp_clear_cache_on_exit=0
@@ -69,7 +74,6 @@ if executable('ag')
        " ag is fast enough that CtrlP doesn't need to cache (act no i am not seeing it is)
        "let g:ctrlp_use_caching = 0
 endif" The Silver Searcher
-
 "YouCompleteMe Settings
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -79,29 +83,19 @@ let g:ycm_semantic_triggers = {
              \ 'c' : ['->', '.'],
              \ 'cpp' : ['->', '.'],
              \ }
-
-
-
 "Use system clipboard
 " RUN THIS sudo apt-get install vim-gtk
 set clipboard=unnamed
 set clipboard=unnamedplus
-
 "Vim Defaults
 set autoindent        " always set autoindenting on
 set showmatch        " Show matching brackets.
 set ignorecase    " Do case insensitive matching
-
 " indentation
 filetype indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
-
-
-
-
 " Brief help
 "
 " :PluginList       - lists configured plugins
