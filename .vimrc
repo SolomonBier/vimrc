@@ -32,6 +32,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'powerline/fonts'
+Plugin 'scrooloose/syntastic'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -83,6 +84,21 @@ let g:ycm_semantic_triggers = {
              \ 'c' : ['->', '.'],
              \ 'cpp' : ['->', '.'],
              \ }
+
+"Syntastic Settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_pylint_post_args="--max-line-length=100"
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_clang_check_post_args = ""
+
 "Use system clipboard
 " RUN THIS sudo apt-get install vim-gtk
 set clipboard=unnamed
