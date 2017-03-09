@@ -12,6 +12,8 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'tomtom/tcomment_vim'
+" Comments code
 Plugin 'L9'
 " You complete me plugin
 Plugin 'valloric/youcompleteme'
@@ -75,6 +77,7 @@ if executable('ag')
        " ag is fast enough that CtrlP doesn't need to cache (act no i am not seeing it is)
        "let g:ctrlp_use_caching = 0
 endif" The Silver Searcher
+"
 "YouCompleteMe Settings
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -84,6 +87,14 @@ let g:ycm_semantic_triggers = {
              \ 'c' : ['->', '.'],
              \ 'cpp' : ['->', '.'],
              \ }
+" You Complete Me improvements found on
+" http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 "Syntastic Settings
 set statusline+=%#warningmsg#
@@ -102,12 +113,20 @@ let g:syntastic_cpp_clang_check_post_args = ""
 "Use system clipboard
 " RUN THIS sudo apt-get install vim-gtk
 set clipboard=unnamed
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
+
 "Vim Defaults
 set autoindent        " always set autoindenting on
 set showmatch        " Show matching brackets.
 set ignorecase    " Do case insensitive matching
-" indentation
+set hlsearch
+set incsearch " search as characters are entered
+set lazyredraw " redraw only when we need to.
+set smartcase " Use smartcase sensitive search (ignores case unless capitalization is used)
+set cursorline
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
 filetype indent on
 set tabstop=4
 set shiftwidth=4
